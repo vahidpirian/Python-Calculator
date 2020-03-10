@@ -9,6 +9,7 @@ calc.configure(bg = "black")
     # FORMATTING #
     ############
 
+
 section_1 = Frame (
         calc,
         width = 290,
@@ -35,27 +36,23 @@ section_3.pack(side = TOP)
     # Output display section #
     #########################
 
-section_show = Text (
+section_show = Entry (
         section_1,
         bd = 3,
-        width = 50,
         font = 4,
-        height = 5.5,
+        textvariable = zero,
         fg = "black",
-       background = "white"
-        )
-section_show.pack(side = TOP)
+        background = "white"
+        ).grid( ipadx = 39, ipady = 48)
 
-result = Text (
+result = Entry (
         section_2,
         bd = 3,
         font = 4,
-        width = 50,
-        height = 2.25,
+        justify = RIGHT,
         fg = "black",
         background = "white"
-        )
-result.pack(side = TOP)
+        ).grid(ipadx = 39, ipady = 9, row = 4)
    
      ##########
     # BUTTONS #
@@ -340,6 +337,7 @@ for i in range(6):
                     frame,
                     text = "0",
                     width = 4,
+                    command = lambda: zero(),
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
@@ -372,5 +370,6 @@ for i in range(6):
                     relief = RAISED
                     )
             btn_7.pack()
+
 
 calc.mainloop()
