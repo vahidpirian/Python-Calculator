@@ -5,6 +5,7 @@ calc.resizable(width = False, height = False)
 calc.title("Calculator")
 calc.configure(bg = "black")
 
+
      ############ 
     # FORMATTING #
     ############
@@ -40,9 +41,8 @@ section_show = Entry (
         section_1,
         bd = 3,
         font = 4,
-        textvariable = zero,
         fg = "black",
-        background = "white"
+        background = "white",
         ).grid( ipadx = 39, ipady = 48)
 
 result = Entry (
@@ -51,7 +51,7 @@ result = Entry (
         font = 4,
         justify = RIGHT,
         fg = "black",
-        background = "white"
+        background = "white",
         ).grid(ipadx = 39, ipady = 9, row = 4)
    
      ##########
@@ -71,7 +71,7 @@ for i in range(6):
         frame.grid( row = i, column = j, padx = 5, pady = 5)
         
         if i == 0 and j == 0:
-            btn_del = Button (
+            btn_clear = Button (
                     frame,
                     fg = "blue",
                     text = "C",
@@ -79,11 +79,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED,
                     )
-            btn_del.pack()
+            btn_clear.pack()
  
             
         elif i == 0 and j == 1:
-            btn_c = Button (
+            btn_del = Button (
                     frame,
                     fg = "blue",
                     text = "DEL",
@@ -91,11 +91,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_c.pack()
+            btn_del.pack()
 
 
         elif i == 0 and j == 2:
-            btn_div = Button (
+            btn_obrackets = Button (
                     frame,
                     fg = "blue",
                     text = "(",
@@ -103,11 +103,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_div.pack()
+            btn_obrackets.pack()
         
 
         elif i == 0 and j == 3:
-            btn_mul = Button (
+            btn_cbrackets = Button (
                     frame,
                     fg = "blue",
                     text = ")",
@@ -115,11 +115,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_mul.pack()
+            btn_cbrackets.pack()
 
 
         elif i == 1 and j == 0:
-            btn_del = Button (
+            btn_mul = Button (
                     frame,
                     fg = "blue",
                     text = "X",
@@ -127,11 +127,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_del.pack()
+            btn_mul.pack()
 
 
         elif i == 1 and j == 1:
-            btn_7 = Button (
+            btn_div = Button (
                     frame,
                     fg = "blue",
                     text = "÷",
@@ -139,11 +139,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_div.pack()
 
 
         elif i == 1 and j == 2:
-            btn_7 = Button (
+            btn_sum = Button (
                     frame,
                     fg = "blue",
                     text = "+",
@@ -151,11 +151,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_sum.pack()
 
 
         elif i == 1 and j == 3:
-            btn_7 = Button (
+            btn_minus = Button (
                     frame,
                     fg = "blue",
                     text = "-",
@@ -163,11 +163,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_minus.pack()
 
 
         elif i == 2 and j == 0:
-            btn_7 = Button (
+            btn_seven = Button (
                     frame,
                     text = "7",
                     width = 4,
@@ -176,11 +176,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_seven.pack()
 
 
         elif i == 2 and j == 1:
-            btn_7 = Button (
+            btn_eight = Button (
                     frame,
                     text = "8",
                     width = 4,
@@ -189,11 +189,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_eight.pack()
 
 
         elif i == 2 and j == 2:
-            btn_7 = Button (
+            btn_nine = Button (
                     frame,
                     text = "9",
                     width = 4,
@@ -202,11 +202,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_nine.pack()
 
 
         elif i == 2 and j == 3:
-            btn_7 = Button (
+            btn_square_2 = Button (
                     frame,
                     fg = "blue",
                     text = "x²",
@@ -214,11 +214,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_square_2.pack()
 
 
         elif i == 3 and j == 0:
-            btn_7 = Button (
+            btn_four = Button (
                     frame,
                     text = "4",
                     width = 4,
@@ -227,11 +227,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_four.pack()
 
 
         elif i == 3 and j == 1:
-            btn_7 = Button (
+            btn_five = Button (
                     frame,
                     text = "5",
                     width = 4,
@@ -240,11 +240,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_five.pack()
 
 
         elif i == 3 and j == 2:
-            btn_7 = Button (
+            btn_six = Button (
                     frame,
                     text = "6",
                     width = 4,
@@ -253,11 +253,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_six.pack()
 
 
         elif i == 3 and j == 3:
-            btn_7 = Button (
+            btn_square_3 = Button (
                     frame,
                     fg = "blue",
                     text = "x³",
@@ -265,11 +265,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_square_3.pack()
 
 
         elif i == 4 and j == 0:
-            btn_7 = Button (
+            btn_one = Button (
                     frame,
                     text = "1",
                     width = 4,
@@ -278,11 +278,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_one.pack()
 
 
         elif i == 4 and j == 1:
-            btn_7 = Button (
+            btn_two = Button (
                     frame,
                     text = "2",
                     width = 4,
@@ -291,11 +291,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_two.pack()
 
 
         elif i == 4 and j == 2:
-            btn_7 = Button (
+            btn_three = Button (
                     frame,
                     text = "3",
                     width = 4,
@@ -304,11 +304,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_three.pack()
 
 
         elif i == 4 and j == 3:
-            btn_7 = Button (
+            btn_s = Button (
                     frame,
                     fg = "blue",
                     text = "ᜯ",
@@ -316,11 +316,11 @@ for i in range(6):
                     height = 1,
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_s.pack()
 
 
         elif i == 5 and j == 0:
-            btn_7 = Button (
+            btn_persent = Button (
                     frame,
                     text = "%",
                     width = 4,
@@ -329,25 +329,24 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_persent.pack()
 
 
         elif i == 5 and j == 1:
-            btn_7 = Button (
+            btn_zero = Button (
                     frame,
                     text = "0",
                     width = 4,
-                    command = lambda: zero(),
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_zero.pack()
 
 
         elif i == 5 and j == 2:
-            btn_7 = Button (
+            btn_dot = Button (
                     frame,
                     text = ".",
                     width = 4,
@@ -356,11 +355,11 @@ for i in range(6):
                     background = "white",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_dot.pack()
 
 
         elif i == 5 and j == 3:
-            btn_7 = Button (
+            btn_equal = Button (
                     frame,
                     text = "=",
                     width = 4,
@@ -369,7 +368,7 @@ for i in range(6):
                     background = "blue",
                     relief = RAISED
                     )
-            btn_7.pack()
+            btn_equal.pack()
 
 
 calc.mainloop()
