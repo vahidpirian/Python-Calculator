@@ -1,7 +1,7 @@
 from tkinter import *
 import math
 calc = Tk()
-calc.geometry('288x430')
+calc.geometry('288x385')
 calc.resizable(width = False, height = False)
 calc.title("Calculator")
 calc.configure(bg = "black")
@@ -86,20 +86,14 @@ section_1 = Frame (
         ) 
 section_1.pack(side = TOP)
 
-section_2 = Frame (
-        calc,
-        width = 290,
-        height = 50,
-        )
-section_2.pack(side = TOP)
 
-section_3 = Frame (
+section_2 = Frame (
         calc,
         width = 290,
         height = 350,
         bg = "#555753"
         )
-section_3.pack(side = TOP)
+section_2.pack(side = TOP)
 
      #########################
     # Output display section #
@@ -114,14 +108,6 @@ section_show = Entry (
         textvariable = operator
         ).grid( ipadx = 39, ipady = 48)
 
-result = Entry (
-        section_2,
-        bd = 3,
-        font = 4,
-        justify = RIGHT,
-        fg = "black",
-        background = "white",
-        ).grid(ipadx = 39, ipady = 9, row = 4)
    
      ##########
     # BUTTONS #
@@ -130,7 +116,7 @@ result = Entry (
 for i in range(6):
     for j in range(4):
         frame = Frame (
-                section_3,
+                section_2,
                 borderwidth = 1,
                 width = 20,
                 height = 10,
