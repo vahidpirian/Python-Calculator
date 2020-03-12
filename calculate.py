@@ -1,10 +1,78 @@
 from tkinter import *
+import math
 calc = Tk()
 calc.geometry('288x430')
 calc.resizable(width = False, height = False)
 calc.title("Calculator")
 calc.configure(bg = "black")
 
+     #####################
+    # DEFINE THE FORMULA #
+    #####################
+
+value = ""
+operator = IntVar()
+
+def Number(Num):
+    global value
+    value = value + str(Num)
+    operator.set(value)
+
+def equal():
+    try:
+        global value
+        total = str(eval(value))
+        operator.set(total)
+        value = ""
+    except:
+        operator.set("error")
+        value = ""
+
+def pow_2():
+    global value
+    value = int(value)
+    total = str(value * value)
+    operator.set(total)
+    value = ""
+
+def pow_3():
+    global value
+    value = int(value)
+    total = str(value * value * value)
+    operator.set(total)
+    value = ""
+
+def square():
+    global value
+    value = int(value)
+    total = str(value ** 0.5)
+    operator.set(total)
+    value = ""
+
+def persent():
+    global value
+    value = int(value)
+    total = str(value * (1/100))
+    operator.set(total)
+    value = ""
+
+def pi():
+    global value
+    value = float(value)
+    total = str(value * 3.14159)
+    operator.set(total)
+    value = ""
+
+def exponent():
+    global value
+    value = int(value)
+    total = str(1 / value)
+    operator.set(total)
+    value = ""
+
+def clear():
+    global value
+    operator.set("")
 
      ############ 
     # FORMATTING #
@@ -43,6 +111,7 @@ section_show = Entry (
         font = 4,
         fg = "black",
         background = "white",
+        textvariable = operator
         ).grid( ipadx = 39, ipady = 48)
 
 result = Entry (
@@ -77,6 +146,7 @@ for i in range(6):
                     text = "C",
                     width = 4,
                     height = 1,
+                    command = lambda: clear(),
                     relief = RAISED,
                     )
             btn_clear.pack()
@@ -86,9 +156,10 @@ for i in range(6):
             btn_del = Button (
                     frame,
                     fg = "blue",
-                    text = "DEL",
+                    text = "x¯¹",
                     width = 4,
                     height = 1,
+                    command = lambda: exponent(),
                     relief = RAISED
                     )
             btn_del.pack()
@@ -101,6 +172,7 @@ for i in range(6):
                     text = "(",
                     width = 4,
                     height = 1,
+                    command = lambda: Number("("),
                     relief = RAISED
                     )
             btn_obrackets.pack()
@@ -113,6 +185,7 @@ for i in range(6):
                     text = ")",
                     width = 4,
                     height = 1,
+                    command = lambda: Number(")"),
                     relief = RAISED
                     )
             btn_cbrackets.pack()
@@ -122,9 +195,10 @@ for i in range(6):
             btn_mul = Button (
                     frame,
                     fg = "blue",
-                    text = "X",
+                    text = chr(142),
                     width = 4,
                     height = 1,
+                    command = lambda: Number("*"),
                     relief = RAISED
                     )
             btn_mul.pack()
@@ -134,9 +208,10 @@ for i in range(6):
             btn_div = Button (
                     frame,
                     fg = "blue",
-                    text = "÷",
+                    text = chr(143),
                     width = 4,
                     height = 1,
+                    command = lambda: Number("/"),
                     relief = RAISED
                     )
             btn_div.pack()
@@ -149,6 +224,7 @@ for i in range(6):
                     text = "+",
                     width = 4,
                     height = 1,
+                    command = lambda: Number("+"),
                     relief = RAISED
                     )
             btn_sum.pack()
@@ -161,6 +237,7 @@ for i in range(6):
                     text = "-",
                     width = 4,
                     height = 1,
+                    command = lambda: Number("-"),
                     relief = RAISED
                     )
             btn_minus.pack()
@@ -174,6 +251,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(7),
                     relief = RAISED
                     )
             btn_seven.pack()
@@ -187,6 +265,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(8),
                     relief = RAISED
                     )
             btn_eight.pack()
@@ -200,6 +279,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(9),
                     relief = RAISED
                     )
             btn_nine.pack()
@@ -212,6 +292,7 @@ for i in range(6):
                     text = "x²",
                     width = 4,
                     height = 1,
+                    command = lambda: pow_2(),
                     relief = RAISED
                     )
             btn_square_2.pack()
@@ -225,6 +306,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(4),
                     relief = RAISED
                     )
             btn_four.pack()
@@ -238,6 +320,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(5),
                     relief = RAISED
                     )
             btn_five.pack()
@@ -251,6 +334,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(6),
                     relief = RAISED
                     )
             btn_six.pack()
@@ -263,6 +347,7 @@ for i in range(6):
                     text = "x³",
                     width = 4,
                     height = 1,
+                    command = lambda: pow_3(),
                     relief = RAISED
                     )
             btn_square_3.pack()
@@ -276,6 +361,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(1),
                     relief = RAISED
                     )
             btn_one.pack()
@@ -289,6 +375,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(2),
                     relief = RAISED
                     )
             btn_two.pack()
@@ -302,6 +389,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(3),
                     relief = RAISED
                     )
             btn_three.pack()
@@ -314,6 +402,7 @@ for i in range(6):
                     text = "ᜯ",
                     width = 4,
                     height = 1,
+                    command = lambda: square(),
                     relief = RAISED
                     )
             btn_s.pack()
@@ -327,6 +416,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: persent(),
                     relief = RAISED
                     )
             btn_persent.pack()
@@ -340,6 +430,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number(0),
                     relief = RAISED
                     )
             btn_zero.pack()
@@ -348,11 +439,12 @@ for i in range(6):
         elif i == 5 and j == 2:
             btn_dot = Button (
                     frame,
-                    text = ".",
+                    text = chr(183),
                     width = 4,
                     height = 1,
                     highlightbackground = "white",
                     background = "white",
+                    command = lambda: Number("."),
                     relief = RAISED
                     )
             btn_dot.pack()
@@ -366,6 +458,7 @@ for i in range(6):
                     height = 1,
                     highlightbackground = "#555753",
                     background = "blue",
+                    command = lambda: equal(),
                     relief = RAISED
                     )
             btn_equal.pack()
