@@ -73,6 +73,8 @@ def exponent():
 def clear():
     global value
     operator.set("")
+    value = ""
+
 
      ############ 
     # FORMATTING #
